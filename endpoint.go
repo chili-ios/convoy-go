@@ -38,8 +38,8 @@ type EndpointResponse struct {
 	UID         string `json:"uid"`
 	GroupID     string `json:"group_id"`
 	OwnerID     string `json:"owner_id"`
-	TargetUrl   string `json:"target_url"`
-	Title       string `json:"title"`
+	URL         string `json:"url"`
+	Name        string `json:"name"`
 	Description string `json:"description"`
 
 	Status             string   `json:"status"`
@@ -49,9 +49,9 @@ type EndpointResponse struct {
 	SupportEmail       string   `json:"support_email"`
 	IsDisabled         bool     `json:"is_disabled"`
 
-	HttpTimeout       string `json:"http_timeout"`
-	RateLimit         int    `json:"rate_limit"`
-	RateLimitDuration string `json:"rate_limit_duration"`
+	HttpTimeout       int32 `json:"http_timeout"`
+	RateLimit         int   `json:"rate_limit"`
+	RateLimitDuration int32 `json:"rate_limit_duration"`
 
 	Authentication *EndpointAuth `json:"authentication"`
 	Events         int64         `json:"events"`

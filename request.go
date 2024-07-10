@@ -64,7 +64,7 @@ func deleteResource(ctx context.Context, c *Client, url string, res interface{})
 func doReq(c *Client, req *http.Request, res interface{}) error {
 	req.Header.Add("Content-Type", "application/json;charset=utf-8")
 	req.Header.Set("Authorization", fmt.Sprintf("Bearer %s", c.apiKey))
-	req.Header.Set("X-Convoy-Version", "0001-01-01")
+	req.Header.Set("X-Convoy-Version", "2024-04-01")
 
 	resp, err := c.client.Do(req)
 	if err != nil {
@@ -130,7 +130,7 @@ func parseAPIResponse(c *Client, resp *http.Response, resultPtr interface{}) err
 }
 
 func invalidStatusCode(actual int) bool {
-	//Valid list of good HTTP response codes to expect from Convoy's API
+	// Valid list of good HTTP response codes to expect from Convoy's API
 	expected := map[int]bool{
 		200: true,
 		202: true,
